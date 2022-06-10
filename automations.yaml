@@ -1,0 +1,53 @@
+- id: '1651026897450'
+  alias: Turn on coffee machine
+  description: ''
+  trigger:
+  - platform: time
+    at: 05:30:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 2dbcf4fb97fba9dc61fde9a1eb505ee5
+    entity_id: switch.coffee_machine
+    domain: switch
+  mode: single
+- id: '1651026946785'
+  alias: Turn off coffee machine
+  description: ''
+  trigger:
+  - platform: time
+    at: '12:00:00'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 2dbcf4fb97fba9dc61fde9a1eb505ee5
+    entity_id: switch.coffee_machine
+    domain: switch
+  mode: single
+- id: '1651027005591'
+  alias: Turn on lounge lamp
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: -00:30:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: ba7c5b4099d1c4ad0b7cecbb78fa7471
+    entity_id: switch.lounge_lamp
+    domain: switch
+  mode: single
+- id: '1651027047593'
+  alias: Turn off lounge lamp
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:00:00'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: ba7c5b4099d1c4ad0b7cecbb78fa7471
+    entity_id: switch.lounge_lamp
+    domain: switch
+  mode: single
