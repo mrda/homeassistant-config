@@ -9,6 +9,10 @@ duckdns:
   domain: thedavieshome
   access_token: !secret duckdns_token
 
+http:
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
