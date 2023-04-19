@@ -6,7 +6,7 @@ tts:
   - platform: google_translate
 
 duckdns:
-  domain: thedavieshome.duckdns.org
+  domain: thedavieshome
   access_token: !secret duckdns_token
 
 automation: !include automations.yaml
