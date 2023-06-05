@@ -1,13 +1,52 @@
 - id: '1651026897450'
-  alias: Turn on coffee machine
+  alias: Turn on coffee machine (weekdays)
   description: ''
   trigger:
   - platform: time
     at: 05:30:00
-  condition: []
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
   action:
   - type: turn_on
-    device_id: 2dbcf4fb97fba9dc61fde9a1eb505ee5
+    device_id: 9434cac6a82556fcd185e1563786ca3e
+    entity_id: switch.coffee_machine
+    domain: switch
+  mode: single
+- id: '1651026897451'
+  alias: Turn on coffee machine (Sat)
+  description: ''
+  trigger:
+  - platform: time
+    at: 06:20:00
+  condition:
+    condition: time
+    weekday:
+    - sat
+  action:
+  - type: turn_on
+    device_id: 9434cac6a82556fcd185e1563786ca3e
+    entity_id: switch.coffee_machine
+    domain: switch
+  mode: single
+- id: '1651026897452'
+  alias: Turn on coffee machine (Sun)
+  description: ''
+  trigger:
+  - platform: time
+    at: 07:00:00
+  condition:
+    condition: time
+    weekday:
+    - sun
+  action:
+  - type: turn_on
+    device_id: 9434cac6a82556fcd185e1563786ca3e
     entity_id: switch.coffee_machine
     domain: switch
   mode: single
@@ -20,7 +59,7 @@
   condition: []
   action:
   - type: turn_off
-    device_id: 2dbcf4fb97fba9dc61fde9a1eb505ee5
+    device_id: 9434cac6a82556fcd185e1563786ca3e
     entity_id: switch.coffee_machine
     domain: switch
   mode: single
@@ -30,12 +69,12 @@
   trigger:
   - platform: sun
     event: sunset
-    offset: -00:30:00
+    offset: -00:45:00
   condition: []
   action:
   - type: turn_on
-    device_id: ba7c5b4099d1c4ad0b7cecbb78fa7471
-    entity_id: switch.lounge_lamp
+    device_id: 83b168e90869c5488a8a890440146683
+    entity_id: switch.standard_lamp
     domain: switch
   mode: single
 - id: '1651027047593'
@@ -47,7 +86,33 @@
   condition: []
   action:
   - type: turn_off
-    device_id: ba7c5b4099d1c4ad0b7cecbb78fa7471
-    entity_id: switch.lounge_lamp
+    device_id: 83b168e90869c5488a8a890440146683
+    entity_id: switch.standard_lamp
+    domain: switch
+  mode: single
+- id: '1682310047927'
+  alias: Bedroom Lamp on
+  description: ''
+  trigger:
+  - platform: time
+    at: '21:20:00'
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 91d1a5ca8e05a8e1beab67282b9323d6
+    entity_id: switch.bedroom_lamp
+    domain: switch
+  mode: single
+- id: '1682310085739'
+  alias: Bedroom Lamp Turn Off
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:05:00'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 91d1a5ca8e05a8e1beab67282b9323d6
+    entity_id: switch.bedroom_lamp
     domain: switch
   mode: single
