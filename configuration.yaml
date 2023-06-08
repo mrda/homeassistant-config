@@ -13,6 +13,11 @@ http:
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
 
+anniversaries:
+  sensors:
+    - name: Adelaide Half Marathon
+      date: "2023-08-27"
+
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
