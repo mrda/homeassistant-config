@@ -1,0 +1,57 @@
+- id: '1716701535060'
+  alias: Lamp on at Sunset
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: '-30'
+  condition: []
+  action:
+  - service: switch.turn_on
+    metadata: {}
+    data: {}
+    target:
+      device_id: 1d36df1c9b73dea3573884890c3f4e85
+  mode: single
+- id: '1716701595941'
+  alias: Lamp off at night time
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:00:00'
+  condition: []
+  action:
+  - service: switch.turn_off
+    metadata: {}
+    data: {}
+    target:
+      device_id: 1d36df1c9b73dea3573884890c3f4e85
+  mode: single
+- id: '1716701642478'
+  alias: Coffee Machine on
+  description: ''
+  trigger:
+  - platform: time
+    at: 05:30:00
+  condition: []
+  action:
+  - service: switch.turn_on
+    metadata: {}
+    data: {}
+    target:
+      device_id: 7d81d20cf223c3433d3cdc9121df2175
+  mode: single
+- id: '1716701678127'
+  alias: Coffee Machine Off
+  description: ''
+  trigger:
+  - platform: time
+    at: '12:00:00'
+  condition: []
+  action:
+  - service: switch.turn_off
+    metadata: {}
+    data: {}
+    target:
+      device_id: 7d81d20cf223c3433d3cdc9121df2175
+  mode: single
